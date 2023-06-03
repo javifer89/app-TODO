@@ -16,12 +16,6 @@ function addTask(){
 
 }
 
-function filterTask(){
-
-}
-
-
-
 function saveTask(pList, pTask){
     let tareaDuplicada = pList.findIndex(task => listaTareas.mail === listaTareas.mail)
     if (tareaDuplicada === -1){
@@ -31,11 +25,41 @@ function saveTask(pList, pTask){
     return 'Tarea duplicada'
 }
 
-
-
-function deleteTask(){
-
+function filterTaskByPriority(pList, pPriority){
+return.pList.filter((item) => item.prioridad === pPriority)
 }
+// function filterByCategory(pList, pCategory) {
+//     return pList.filter((item) => item.category === pCategory);
+// }
+
+
+
+
+
+//borrar del array - saber el id del elemento
+function deleteTask(){
+    function deleteItemArray(pId, pList) {
+        //splice borrar por posición, tenemos una ID para saber su posición
+        //findIndex devuelve la posición si se cumplela condición y -1 si no se cumple.
+       let posicionBorrar = pList.findIndex((item) => item.id === pId);
+        if (posicionBorrar !== -1) {
+          pList.splice(posicionBorrar, 1);
+        }
+    }
+}
+
+
+    function deleteItem(event) {
+     event.preventDefault();
+     let id = parseInt(event.target.dataset.id);
+     console.log(id, typeof id)
+   }
+    //  borrar fisicamente del DOM //antes de borrar desde "a" tengo que recoger el article -> 2 nodos
+    //  const articleDelete = event.target.parentNode.parentNode; //haremos tantos parentNode como nodos tengamos que subir
+    //  articleDelete.parentNode.removeChild(articleDelete);
+
+
+
 
 
 function printTask(){
