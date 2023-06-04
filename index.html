@@ -17,37 +17,40 @@
 <section id="appTODO">
     <div class="row">
             <div class="input-group mb-3" id="addTask">
-                <span class="input-group-text mt-2 " id="inputGroup-sizing-default" >Nueva tarea</span>
-                <input type="text" class="form-control mt-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-              </div>
-              <select class="form-select" aria-label="Select priority">
-                  <option selected>Selecciona una opción</option>
-                  <option value="1">URGENTE</option>
-                  <option value="2">DIARIA</option>
-                  <option value="3">SEMANAL</option>
-                  <option value="4">MENSUAL</option>
-                </select>
-                <button type="button" class="btn btn-outline-primary mt-2 p-2">AÑADIR</button>
-
-                <select class="form-select mt-3" aria-label="Select priority">
+                <span class="input-group-text mt-2 .bg-info" id="inputGroup-sizing-default" >Nueva tarea</span>
+                <input type="text" class="form-control mt-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="nuevaTarea">
+                <select class="form-select mt-2" aria-label="Select priority">
                     <option selected>Selecciona una opción</option>
                     <option value="1">URGENTE</option>
                     <option value="2">DIARIA</option>
                     <option value="3">SEMANAL</option>
                     <option value="4">MENSUAL</option>
                   </select>
-                  <div class="input-group mb-3" id="filterTask">
-                    <span class="input-group-text mt-2 " id="inputGroup-sizing-default" >Filtrar tarea</span>
-                    <input type="text" class="form-control mt-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <button type="button" class="btn btn-outline-primary mt-2 p-2 w-25" id="btn1">AÑADIR</button>
+              </div>
+
+              <div class="input-group mb-3" id="filterTask">
+                  <span class="input-group-text mt-2 " id="inputGroup-sizing-default" >Filtrar tarea</span>
+                  <input type="text" class="form-control mt-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  <select class="form-select mt-2" aria-label="Select priority">
+                      <option selected>Selecciona una opción</option>
+                      <option value="1">URGENTE</option>
+                      <option value="2">DIARIA</option>
+                      <option value="3">SEMANAL</option>
+                      <option value="4">MENSUAL</option>
+                    </select>
+                    <button type="button" class="btn btn-outline-primary mt-2 p-2 w-25" id="btn2">FILTRAR</button>
                   </div>
 
-            <!-- <ul class="tareas">
+            <!--<article>
+                <ul class="tareas">
                 <li class="task">
                     <h4>Titulo tarea</h4>
-                    <p>Descripción</p>
                     <p>Prioridad</p>
                     <button type="button" class="btn btn-outline-warning">ELIMINAR TAREA</button>
-                </li> -->
+                </li>
+                </ul>
+            </article> -->
             </div>
             </div>
     </div>
