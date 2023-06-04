@@ -1,4 +1,4 @@
-const listaTareas = [
+let listaTareas = [
   { id: 1, titulo: "Estudiar HTML/CSS", prioridad: "diaria" },
   { id: 2, titulo: "Limpiar habitación", prioridad: "semanal" },
   { id: 3, titulo: "Hacer la compra", prioridad: "semanal" },
