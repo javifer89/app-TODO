@@ -10,3 +10,34 @@
 footer{
     text-align: center;
 }
+
+article {
+    flex-wrap: wrap;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.btn {
+    border: 1px solid gray;
+}
+
+.urgente {
+    background-color: indianred;
+    font-weight: bold;
+}
+.diaria {
+    background-color: goldenrod;
+    font-weight: bold;
+}
+.semanal{
+    background-color: cadetblue;
+    font-weight: bold;
+}
+.mensual{
+    background-color: indigo;
+    color: white;
+    font-weight: bold;
+
+}
