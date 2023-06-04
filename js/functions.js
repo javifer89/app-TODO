@@ -26,12 +26,14 @@ const toastEl = document.querySelector(".toast");
 const toast = bootstrap.Toast.getOrCreateInstance(toastEl);
 
 const mensaje = document.querySelector("#mensaje");
-        mensaje.innerHTML = "";
-        const p = document.createElement("p");
+mensaje.innerHTML = "";
+const p = document.createElement("p");
 
 const selectFilter = document.querySelector("#filter-tareas");
 selectFilter.addEventListener('change',filterByPriority)
 
+const inputFilter = document.querySelector('#find-tarea')
+inputFilter.addEventListener('input', getTitulo);
 
 //AÑADIR UNA TAREA)
 function saveTask(pList, pTask) {
@@ -54,7 +56,7 @@ function printOneTask(pTask, pDom) {
     const li = document.createElement("li");
     const btnDel = document.createElement("button");
 
-    article.className = "rounded mb-2 col-12 col-md-6 col-lg-4";
+    article.className = "rounded mb-2  col-12 col-md-6 col-lg-4";
     article.classList.add(pTask.prioridad);
 
   btnDel.classList.add("btn");
@@ -64,7 +66,7 @@ function printOneTask(pTask, pDom) {
   btnDel.dataset.id = pTask.id;
   btnDel.addEventListener("click", deleteTask);
 
-  li.className = "list-group-item d-flex justify-content-between";
+  li.className = "list-group-item d-flex justify-content-space-between";
   li.textContent = pTask.titulo;
 
   ul.append(li, btnDel);
@@ -156,8 +158,6 @@ function getPrioridades(event){
     printTaareas(listaFiltrada, sectionTareas);
 }
 
-const inputFilter = document.querySelector('#find-tarea')
-inputFilter.addEventListener('input', getTitulo);
 
 function getTitulo(event) {
     let palabraBuscar = event.target.value;
@@ -179,8 +179,8 @@ function getTitulo(event) {
                                     word = inputSearch.value;
                                   } else if (event.target.id === "search")
                                     if (event.key === "Enter") {
-                                      aqui quiero saber qué tecla toco
-              word = event.target.value;
+            //                           aqui quiero saber qué tecla toco
+               word = event.target.value;
             }
         }
 

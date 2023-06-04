@@ -3,12 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-#appTODO{
-    margin: 10px 25px 0 25px;
+main {
+    background-color: lightblue;
 }
+#appTODO{
+    margin: 10px 45px 25px 45px;
+}
+header{
+    text-align: center;
+    color: cadetblue;
 
+}
 footer{
     text-align: center;
+    color: cadetblue;
 }
 
 article {
@@ -24,11 +32,11 @@ article {
 }
 
 .urgente {
-    background-color: indianred;
+    background-color: firebrick;
     font-weight: bold;
 }
 .diaria {
-    background-color: goldenrod;
+    background-color: chocolate;
     font-weight: bold;
 }
 .semanal{
