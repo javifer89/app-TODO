@@ -49,3 +49,15 @@ article {
     font-weight: bold;
 
 }
+
+.toast {
+    background-color: whitesmoke;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.toast-header{
+    background-color: bisque;
+    font-weight: bold;
+
+}
