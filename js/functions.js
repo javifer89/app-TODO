@@ -29,11 +29,7 @@ const mensaje = document.querySelector("#mensaje");
 mensaje.innerHTML = "";
 const p = document.createElement("p");
 
-const selectFilter = document.querySelector("#filter-tareas");
-selectFilter.addEventListener('change',filterByPriority)
 
-const inputFilter = document.querySelector('#find-tarea')
-inputFilter.addEventListener('input', getTitulo);
 
 //AÑADIR UNA TAREA)
 function saveTask(pList, pTask) {
@@ -133,6 +129,9 @@ function deleteTask(event) {
     const taskId = +event.target.dataset.id;
                     listaTareas = listaTareas.filter((tarea) => tarea.id !== taskId);
                     sectionTareas.innerHTML = "";
+                    toast.show();
+                    p.innerText = "Tarea eliminada";
+                    mensaje.appendChild(p);
                     printAllTask(listaTareas, sectionTareas);
 }
 
@@ -149,82 +148,41 @@ function deleteTask(event) {
 // }
 // filterByPriority (listaTareas, 'prioridad')
 
+const selectFilter = document.querySelector("#filter-tareas");
+selectFilter.addEventListener('change',filterByPriority)
+
+const inputFilter = document.querySelector('#find-tarea')
+inputFilter.addEventListener('input', getTitulo);
+
+
+
 function filterByPriority(pList, pPriority) {
-    return listaTareas.filter(tarea => tarea.prioridad === pPriority);
+    return listaTareas.filter(tarea => tarea.prioridad.toLowerCase() === pPriority.toLowerCase());
 }
 
 function getPrioridades(event){
-    let listaFiltrada = filterByPrioridad(listaTareas, event.target.value)
-    printTaareas(listaFiltrada, sectionTareas);
+    let listaFiltrada = filterByPriority(listaTareas, event.target.value)
+    printAllTask(listaFiltrada, sectionTareas);
 }
 
+function filterByWord(pList, pWord) {
+    return listaTareas.filter(tarea => tarea.titulo.toLowerCase() === pWord.toLowerCase())
+}
 
 function getTitulo(event) {
     let palabraBuscar = event.target.value;
-    let listaFiltrada = filterByWord(listaTareas, palabraBuscar);
-    printAllTask(listaFiltrada, sectionTareas);
+    let listaFiltrada2 = filterByWord(listaTareas, palabraBuscar);
+    printAllTask(listaFiltrada2, sectionTareas);
     }
 
-//     return.pList.filter((item) => item.prioridad === pPriority)
-// }
-// console.log(listaTareas, semanal)
-// filterTaskByPriority(listaTareas,   )
 
-
-// function printTask(){}
-//  si event viene del inputSearch solo quiero que sea por la tecla intro
-     function getSearch(event) {
-                              let word = "";
-                              if (event.target.id === "btn1") {
-                                    word = inputSearch.value;
-                                  } else if (event.target.id === "search")
-                                    if (event.key === "Enter") {
-            //                           aqui quiero saber qué tecla toco
-               word = event.target.value;
-            }
-        }
-
-
-                    //   function deleteItemArray(pId, pList) {
-                        //     let posicionBorrar = pList.findIndex((item) => item.id === pId);
-                        //     if (posicionBorrar !== -1) {
-                            //       pList.splice(posicionBorrar, 1);
-                            //     }
-                            //   }
-                      //  }
-
-            //   const mensajeErrorVacio = "Los campos no pueden estar vacios";
-            //   const mensajeErrorRepetido = "Tarea repetida";
-
-               //   guardar tarea en el array
-            //   if (comprobarForm(event.target, tareas)) {
-                //     const newTask = {
-                    //       titulo: event.target.titulo.value,
-                    //       prioridad: event.target.prioridad.value,
-                    //     };
-
-                    //     let guardado = saveTask(listaTareas, newTask);
-                    //   }
-
-                     //   imprimirlo
-                    //         if (guardado === 'tarea guardada') {
-                        //           printOneTask(newTask, sectionTareas);
-                        //           id++;
-
-                         //  reset de formulario
-                        //           event.target.reset();
-                        //           inputTitulo.classList = 'form-control';
-                        //           inputPrioridad.classList = 'form-control';
-                        //           mensajeTarea.textContent= '';
-                        //         } else {
-                            //             mensajeTarea.textContent= mensajeErrorRepetido;
-                            //                 event.target.reset();
-                            //       }else {
-                                //         mensajeTarea.textContent = mensajeErrorVacio;
-                                //         inputTitulo.classList = 'form-control is-invalid';
-                                //         inputPrioridad.classList = 'form-control is-invalid'
-                                //         event.target.reset()
-                                //       }
-                      //      }
-
-                            //borrar del array - saber el id del elemento
+function getSearch(event) {
+    let word = "";
+    if (event.target.id === "btnAdd") {
+        word = inputSearch.value;
+    } else if (event.target.id === "inputFilter")
+    if (event.key === "Enter") {
+    //aqui quiero saber qué tecla toco
+    word = event.target.value;
+    }
+}
