@@ -16,75 +16,39 @@
   </head>
   <body>
     <header>
-       <h1>Bloc de tareas</h1>
+      <h1>Bloc de tareas</h1>
     </header>
 
     <main>
       <section id="appTODO">
-        <form
-          class="input-group mb-3"
-          id="addTask"
-          onsubmit="getDataForm(event)"
-        >
-          <span
-            class="input-group-text mt-2 .bg-info"
-            id="inputGroup-sizing-default"
-            >Nueva tarea</span
-          >
-          <input
-            type="text"
-            class="form-control mt-2"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default"
-            id="titulo"
-          />
-          <select
-            id="prioridad"
-            class="form-select mt-2"
-            aria-label="Select priority"
-          >
+        <form class="input-group mb-3" id="addTask" onsubmit="getDataForm(event)">
+          <span class="input-group-text mt-2 .bg-info" id="inputGroup-sizing-default">Nueva tarea</span>
+          <input type="text" class="form-control mt-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="titulo"/>
+          <select id="prioridad" class="form-select mt-2" aria-label="Select priority">
             <option value="" selected>Selecciona una opción</option>
             <option value="urgente">URGENTE</option>
             <option value="diaria">DIARIA</option>
             <option value="semanal">SEMANAL</option>
             <option value="mensual">MENSUAL</option>
           </select>
-          <button
-            type="submit"
-            class="btn btn-outline-primary mt-2 p-2 w-25"
-            id="btn-add"
-          >
-            AÑADIR
-          </button>
+          <button type="submit" class="btn btn-outline-primary mt-2 p-2 w-25" id="btn-add">AÑADIR</button>
         </form>
 
         <form class="input-group mb-3" id="filterTask">
-          <span class="input-group-text mt-2" id="inputGroup-sizing-default"
-            >Filtrar tarea</span
+          <span class="input-group-text mt-2" id="inputGroup-sizing-default">Filtrar tarea</span
           >
-          <input id="find-tarea"
-            type="text"
-            class="form-control mt-2"
-            aria-label="Sizing example input"
-            aria-describedby="inputGroup-sizing-default"
-          />
+          <input id="find-tarea" type="text" class="form-control mt-2" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
           <select id="filter-tareas" class="form-select mt-2" aria-label="Select priority">
-            <option value= "" selected>Selecciona una opción</option>
+            <option value="" selected>Selecciona una opción</option>
             <option value="urgente">URGENTE</option>
             <option value="diaria">DIARIA</option>
             <option value="semanal">SEMANAL</option>
             <option value="mensual">MENSUAL</option>
           </select>
-          <button
-            type="submit"
-            class="btn btn-outline-primary mt-2 p-2 w-25"
-            id="btn-filter"
-          >
-            FILTRAR
-          </button>
         </form>
+
         <div class="row">
-           <!--<article>
+          <!--<article>
                 <ul class="tareas">
                 <li class="task">
                     <h4>Titulo tarea</h4>
@@ -98,12 +62,12 @@
     </main>
 
     <footer>
-      <h3>APP BLOC DE TAREAS - ID-Bootcamps</h3>
+      <h2>App To-Do || ID-Bootcamps</h2>
     </footer>
 
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
       <div class="toast-header">
-        <img class="rounded me-2 " >
+        <img class="rounded me-2" />
         <strong class="me-auto">Alerta</strong>
         <button
           type="button"
