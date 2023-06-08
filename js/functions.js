@@ -1,23 +1,8 @@
-//FUNCIONES A CREAR
-
-// añadir TAREAS
-
-// borrar TAREAS
-
-//filtrar la prioridad de las tareas en URGENTE, DIARIA, SEMANAL Y MENSUAL (CADA UNA CON UN COLOR DIFERENTE, ASIGNADO EN EL MOMENTO DE LA CREACIÓN)
-
-//SELECT CON EVENTO AL CAMBIO, BÚSQUEDA(filtrar) CON EVENTO AL PULSAR EL INTRO
-
-//guardar listado de tareas en el array disponible en el modelo
-
-//MAQUETAR EN BOOTSTRAP
-
 const sectionTareas = document.querySelector(".row");
 const newTask = document.querySelector("#addTask");
 const filterTask = document.querySelector("#filterTask");
 
 const btnAdd = document.querySelector("#btn-add");
-// const btnFilter = document.querySelector("#btn-filter");
 
 const formAddTask = document.querySelector("#addTask");
 const formFilterTask = document.querySelector("#filterTask");
@@ -29,7 +14,7 @@ const mensaje = document.querySelector("#mensaje");
 mensaje.innerHTML = "";
 const p = document.createElement("p");
 
-//AÑADIR UNA TAREA)
+//AÑADIR UNA TAREA
 function saveTask(pList, pTask) {
   let tareaDuplicada = pList.findIndex(
     (task) => pTask.titulo.toLowerCase() === task.titulo.toLowerCase()
@@ -110,6 +95,7 @@ function getDataForm(event) {
     mensaje.appendChild(p);
   }
 }
+
 //ELIMINAR TAREA
 function deleteTask(event) {
   const taskId = +event.target.dataset.id;
@@ -143,10 +129,12 @@ function getPrioridades(event) {
 }
 
 function filterByWord(pList, pWord) {
+  // if (event.key === "Enter") {
+  //   event.preventDefault();
   const listaFiltrada2 = listaTareas.filter((tarea) => {
-    console.log(tarea, pWord);
     return tarea.titulo.toLowerCase().includes(pWord.toLowerCase());
-  });
+}
+);
   return listaFiltrada2;
 }
 function getTitulo(event) {
@@ -159,10 +147,10 @@ function getSearch(event) {
   let word = "";
   if (event.target.id === "inputFilter") {
     word = inputFilter.value;
-  } else if (event.target.id === "inputFilter")
+  } else if (event.target.id === "inputFilter"){
     if (event.key === "Enter") {
-      console.log(getSearch);
-      //aqui quiero saber qué tecla toco
       word = event.target.value;
     }
+}
+}
 }
