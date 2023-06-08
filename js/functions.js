@@ -112,9 +112,12 @@ const selectFilter = document.querySelector("#filter-tareas");
 selectFilter.addEventListener("change", getPrioridades);
 
 const inputFilter = document.querySelector("#find-tarea");
-inputFilter.addEventListener("input", getTitulo);
-//  inputFilter.addEventListener('Enter', getTitulo);
-// inputFilter.addEventListener('keypress', filterByWord)
+inputFilter.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    getTitulo(event);
+    inputFilter.value = "";
+  }
+});
 
 function filterByPriority(pList, pPriority) {
   return listaTareas.filter(
@@ -129,28 +132,27 @@ function getPrioridades(event) {
 }
 
 function filterByWord(pList, pWord) {
-  // if (event.key === "Enter") {
-  //   event.preventDefault();
   const listaFiltrada2 = listaTareas.filter((tarea) => {
     return tarea.titulo.toLowerCase().includes(pWord.toLowerCase());
-}
-);
+  });
   return listaFiltrada2;
 }
+
 function getTitulo(event) {
-  let palabraBuscar = event.target.value;
-  const listaFiltrada2 = filterByWord(listaTareas, palabraBuscar);
-  printAllTask(listaFiltrada2, sectionTareas);
+  if (event.key === "Enter") {
+    let palabraBuscar = event.target.value;
+    let listaFiltrada2 = filterByWord(listaTareas, palabraBuscar);
+    printAllTask(listaFiltrada2, sectionTareas);
+  }
 }
 
 function getSearch(event) {
   let word = "";
   if (event.target.id === "inputFilter") {
     word = inputFilter.value;
-  } else if (event.target.id === "inputFilter"){
+  } else if (event.target.id === "inputFilter") {
     if (event.key === "Enter") {
       word = event.target.value;
     }
-}
-}
+  }
 }
