@@ -140,6 +140,7 @@ function filterByWord(pList, pWord) {
 
 function getTitulo(event) {
   if (event.key === "Enter") {
+    event.preventDefault();
     let palabraBuscar = event.target.value;
     let listaFiltrada2 = filterByWord(listaTareas, palabraBuscar);
     printAllTask(listaFiltrada2, sectionTareas);
